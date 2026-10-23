@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="T-shirt size chart">
+    <title>Product Size Chart</title>
+
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            max-width: 700px;
+        }
+
+        caption {
+            font-weight: bold;
+            padding: 0.5rem;
+        }
+
+        th,
+        td {
+            border: 1px solid #999;
+            padding: 0.5rem;
+            text-align: center;
+        }
+
+        thead {
+            background-color: #e8e8e8;
+        }
+
+        tbody tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        tfoot {
+            font-weight: bold;
+            background-color: #e8e8e8;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Product Size Chart</h1>
+        <p>Find the right T-shirt size for you.</p>
+    </header>
+
+    <main>
+        <table>
+            <caption>T-Shirt Size Chart</caption>
+
+            <thead>
+                <tr>
+                    <th scope="col">Size</th>
+                    <th scope="col">Chest (inches)</th>
+                    <th scope="col">Length (inches)</th>
+                    <th scope="col">Shoulder (inches)</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr>
+                    <th scope="row">S</th>
+                    <td>36</td>
+                    <td>26</td>
+                    <td>16</td>
+                </tr>
+                <tr>
+                    <th scope="row">M</th>
+                    <td>38</td>
+                    <td>27</td>
+                    <td>17</td>
+                </tr>
+                <tr>
+                    <th scope="row">L</th>
+                    <td>40</td>
+                    <td>28</td>
+                    <td>18</td>
+                </tr>
+                <tr>
+                    <th scope="row">XL</th>
+                    <td>42</td>
+                    <td>29</td>
+                    <td>19</td>
+                </tr>
+                <tr>
+                    <th scope="row">XXL</th>
+                    <td>44</td>
+                    <td>30</td>
+                    <td>20</td>
+                </tr>
+            </tbody>
+
+            <tfoot>
+                <tr>
+                    <td colspan="4">Measurements are approximate.</td>
+                </tr>
+            </tfoot>
+        </table>
+    </main>
+
+    <footer>
+        <p>Choose your size carefully before ordering.</p>
+    </footer>
+
+</body>
+</html>
