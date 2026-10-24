@@ -1,0 +1,95 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="A webpage demonstrating different CSS selectors">
+  <title>My CSS Selectors Page</title>
+
+  <style>
+    /* 1. Universal Selector */
+    * {
+      box-sizing: border-box;
+    }
+
+    /* 2. Element Selector */
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f0f4f8;
+      padding: 20px;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    h1 {
+      color: #1d3557;
+      text-align: center;
+    }
+
+    /* 3. Class Selector */
+    .card {
+      background-color: white;
+      padding: 20px;
+      margin: 15px auto;
+      max-width: 600px;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    /* 4. ID Selector */
+    #special {
+      border-left: 5px solid #e63946;
+    }
+
+    /* 5. Grouping Selector */
+    h2, h3 {
+      color: #457b9d;
+    }
+
+    /* 6. Descendant Selector */
+    .card a {
+      color: #e63946;
+    }
+
+    /* 7. Pseudo-class Selector */
+    a:hover {
+      color: #1d3557;
+      background-color: #ffe066;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>My CSS Selectors Page</h1>
+
+  <div class="card">
+    <h2>About Me</h2>
+    <p>My name is Rajan Mishra.</p>
+    <p>I am a BCA AI student at Invertis University.</p>
+    <p>Location: Bareilly, Uttar Pradesh</p>
+  </div>
+
+  <div class="card" id="special">
+    <h2>My Skills</h2>
+    <ul>
+      <li>HTML</li>
+      <li>CSS</li>
+      <li>Java</li>
+      <li>Git &amp; GitHub</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h3>Learn CSS</h3>
+    <p>
+      Visit
+      <a href="https://developer.mozilla.org/en-US/docs/Web/CSS">
+        CSS Documentation
+      </a>
+      to learn more.
+    </p>
+  </div>
+</body>
+</html>
+```
