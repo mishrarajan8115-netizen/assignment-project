@@ -1,0 +1,117 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Design Tokens with CSS Variables</title>
+
+    <style>
+        /* Design Tokens */
+        :root {
+            /* Colour Variables */
+            --primary-color: #2563eb;
+            --secondary-color: #64748b;
+            --background-color: #f1f5f9;
+            --card-color: #ffffff;
+            --text-color: #1e293b;
+            --accent-color: #f59e0b;
+
+            /* Font Size Variables */
+            --font-small: 14px;
+            --font-medium: 18px;
+            --font-large: 28px;
+            --font-heading: 36px;
+
+            /* Spacing Variables */
+            --spacing-small: 10px;
+            --spacing-medium: 20px;
+            --spacing-large: 30px;
+
+            /* Other Variables */
+            --border-radius: 12px;
+        }
+
+        /* Basic Styling */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: var(--background-color);
+            color: var(--text-color);
+            margin: 0;
+            padding: var(--spacing-large);
+        }
+
+        .container {
+            max-width: 700px;
+            margin: auto;
+        }
+
+        h1 {
+            color: var(--primary-color);
+            font-size: var(--font-heading);
+        }
+
+        h2 {
+            font-size: var(--font-large);
+        }
+
+        p {
+            font-size: var(--font-medium);
+            line-height: 1.6;
+        }
+
+        .card {
+            background-color: var(--card-color);
+            padding: var(--spacing-large);
+            border-radius: var(--border-radius);
+            margin-top: var(--spacing-medium);
+        }
+
+        .small-text {
+            font-size: var(--font-small);
+            color: var(--secondary-color);
+        }
+
+        .button {
+            background-color: var(--primary-color);
+            color: white;
+            font-size: var(--font-medium);
+            padding: var(--spacing-small) var(--spacing-medium);
+            border: none;
+            border-radius: var(--border-radius);
+            cursor: pointer;
+        }
+
+        .button:hover {
+            background-color: var(--accent-color);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>CSS Design Tokens</h1>
+
+        <p>
+            This webpage uses CSS variables to manage colours,
+            font sizes, and spacing.
+        </p>
+
+        <div class="card">
+            <h2>About Design Tokens</h2>
+
+            <p>
+                Design tokens are reusable values stored in CSS variables.
+                They make a website easier to maintain and style.
+            </p>
+
+            <p class="small-text">
+                Example: Primary colour, font size, spacing and border radius.
+            </p>
+
+            <button class="button">Learn More</button>
+        </div>
+    </div>
+</body>
+</html>
+```
