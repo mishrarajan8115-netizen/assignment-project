@@ -1,0 +1,298 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Styled multi-page project with design choices.">
+    <title>Rajan's Website</title>
+
+    <style>
+        :root {
+            /* Colour Design Tokens */
+            --primary: #1f3a93;
+            --accent: #f4a261;
+            --bg: #f8f9fc;
+            --text: #222222;
+            --card-bg: #ffffff;
+
+            /* Font Size Tokens */
+            --font-small: 14px;
+            --font-medium: 16px;
+            --font-large: 22px;
+            --font-heading: 28px;
+
+            /* Spacing and Radius */
+            --spacing-small: 8px;
+            --spacing-medium: 16px;
+            --spacing-large: 24px;
+            --radius: 8px;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', system-ui, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            font-size: var(--font-medium);
+        }
+
+        header {
+            background: var(--primary);
+            color: white;
+            padding: var(--spacing-medium) var(--spacing-large);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: var(--font-large);
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: var(--spacing-medium);
+            padding-bottom: 2px;
+        }
+
+        nav a:hover {
+            border-bottom: 2px solid var(--accent);
+        }
+
+        main {
+            max-width: 800px;
+            margin: auto;
+            padding: var(--spacing-large);
+        }
+
+        .page {
+            display: none;
+            background: var(--card-bg);
+            padding: var(--spacing-large);
+            border-radius: var(--radius);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+        }
+
+        .page:target,
+        body:not(:has(.page:target)) #home {
+            display: block;
+        }
+
+        h2 {
+            color: var(--primary);
+            margin-top: 0;
+            font-size: var(--font-heading);
+        }
+
+        label {
+            display: block;
+            margin-bottom: 12px;
+            font-weight: 600;
+        }
+
+        input, select, textarea {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            margin-top: 4px;
+            border: 1px solid #bbbbbb;
+            border-radius: 4px;
+            font: inherit;
+        }
+
+        button {
+            background: var(--accent);
+            border: none;
+            padding: 10px 22px;
+            border-radius: var(--radius);
+            font-size: var(--font-medium);
+            font-weight: 700;
+            cursor: pointer;
+        }
+
+        button:hover {
+            filter: brightness(0.92);
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        th, td {
+            border: 1px solid #dddddd;
+            padding: 10px;
+            text-align: left;
+        }
+
+        th {
+            background: #eef1fb;
+        }
+
+        .note {
+            background: #fff8ec;
+            border-left: 5px solid var(--accent);
+            padding: var(--spacing-medium);
+            margin-top: var(--spacing-medium);
+            border-radius: 4px;
+        }
+
+        .note p {
+            font-size: var(--font-small);
+        }
+
+        footer {
+            text-align: center;
+            padding: var(--spacing-medium);
+            color: #666666;
+        }
+
+        @media (max-width: 600px) {
+            header {
+                gap: var(--spacing-medium);
+            }
+
+            nav a {
+                display: inline-block;
+                margin: 4px 8px 4px 0;
+            }
+
+            main {
+                padding: var(--spacing-medium);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Rajan's Site</h1>
+
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#register">Register</a>
+            <a href="#contact">Contact</a>
+            <a href="#design">Design Note</a>
+        </nav>
+    </header>
+
+    <main>
+        <section id="home" class="page">
+            <h2>Home</h2>
+            <p>Welcome to my styled multi-page website project.</p>
+            <p>This project demonstrates HTML, CSS styling, navigation,
+               forms, tables and CSS variables.</p>
+        </section>
+
+        <section id="about" class="page">
+            <h2>About Me</h2>
+
+            <table>
+                <tr>
+                    <th>Name</th>
+                    <td>Rajan Mishra</td>
+                </tr>
+                <tr>
+                    <th>University</th>
+                    <td>Invertis University</td>
+                </tr>
+                <tr>
+                    <th>Course</th>
+                    <td>BCA - Artificial Intelligence</td>
+                </tr>
+                <tr>
+                    <th>Interests</th>
+                    <td>Web Development, Java, Git and GitHub</td>
+                </tr>
+            </table>
+        </section>
+
+        <section id="register" class="page">
+            <h2>Registration</h2>
+
+            <form action="#">
+                <label>
+                    Name
+                    <input type="text" placeholder="Enter your name" required>
+                </label>
+
+                <label>
+                    Email
+                    <input type="email" placeholder="Enter your email" required>
+                </label>
+
+                <label>
+                    Course
+                    <select>
+                        <option>BCA - Artificial Intelligence</option>
+                        <option>BCA</option>
+                        <option>B.Tech</option>
+                    </select>
+                </label>
+
+                <button type="submit">Register</button>
+            </form>
+        </section>
+
+        <section id="contact" class="page">
+            <h2>Contact</h2>
+
+            <form action="#">
+                <label>
+                    Name
+                    <input type="text" placeholder="Enter your name" required>
+                </label>
+
+                <label>
+                    Message
+                    <textarea rows="4" placeholder="Write your message"
+                              required></textarea>
+                </label>
+
+                <button type="submit">Send</button>
+            </form>
+        </section>
+
+        <section id="design" class="page">
+            <h2>Design Choices</h2>
+
+            <div class="note">
+                <p><strong>Colour:</strong> Deep blue represents trust
+                and professionalism, while orange highlights important
+                actions and buttons.</p>
+
+                <p><strong>Typography:</strong> The Segoe UI system font
+                provides a clean and readable appearance. CSS variables
+                control font sizes consistently.</p>
+
+                <p><strong>Layout:</strong> The content width is limited
+                to 800px. White content cards on a light background improve
+                readability and organization.</p>
+
+                <p><strong>Navigation:</strong> Navigation links allow
+                users to move between Home, About, Registration, Contact
+                and Design Choices sections.</p>
+
+                <p><strong>Maintainability:</strong> CSS variables store
+                colours, font sizes, spacing and border radius in one
+                place, making future changes easier.</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <small>&copy; 2026 Rajan Mishra | Student Project</small>
+    </footer>
+</body>
+</html>
+```
