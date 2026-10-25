@@ -1,0 +1,217 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Responsive Navbar and Hero Section">
+  <title>Navbar + Hero Section</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      color: #1b263b;
+    }
+
+    /* Navbar */
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 5%;
+      background: white;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      position: relative;
+    }
+
+    .logo {
+      font-size: 24px;
+      font-weight: bold;
+      color: #0077b6;
+    }
+
+    .links {
+      display: flex;
+      align-items: center;
+      gap: 25px;
+      list-style: none;
+    }
+
+    .links a {
+      text-decoration: none;
+      color: #1b263b;
+    }
+
+    .links .cta {
+      background: #0077b6;
+      color: white;
+      padding: 10px 18px;
+      border-radius: 6px;
+    }
+
+    #toggle,
+    .burger {
+      display: none;
+    }
+
+    /* Hero Section */
+    .hero {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 40px;
+      max-width: 1100px;
+      margin: auto;
+      padding: 60px 20px;
+    }
+
+    .hero__text {
+      flex: 1;
+    }
+
+    .hero__text h1 {
+      font-size: clamp(32px, 5vw, 50px);
+      line-height: 1.2;
+      margin-bottom: 20px;
+    }
+
+    .hero__text p {
+      color: #4a5568;
+      line-height: 1.6;
+      margin-bottom: 25px;
+    }
+
+    .hero__btns {
+      display: flex;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 12px 22px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .btn--primary {
+      background: #0077b6;
+      color: white;
+    }
+
+    .btn--ghost {
+      border: 2px solid #0077b6;
+      color: #0077b6;
+    }
+
+    .hero__img {
+      flex: 1;
+      min-width: 0;
+    }
+
+    .hero__img img {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-radius: 16px;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .burger {
+        display: block;
+        font-size: 28px;
+        cursor: pointer;
+      }
+
+      .links {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+        padding: 20px;
+        background: white;
+        box-shadow: 0 8px 12px rgba(0, 0, 0, 0.1);
+      }
+
+      #toggle:checked ~ .links {
+        display: flex;
+      }
+
+      .hero {
+        flex-direction: column-reverse;
+        text-align: center;
+        padding: 35px 20px;
+      }
+
+      .hero__btns {
+        justify-content: center;
+      }
+
+      .hero__img {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <span class="logo">CloudNine</span>
+
+    <input type="checkbox" id="toggle">
+
+    <label for="toggle" class="burger" aria-label="Toggle menu">
+      ☰
+    </label>
+
+    <ul class="links">
+      <li><a href="#">Features</a></li>
+      <li><a href="#">Pricing</a></li>
+      <li><a href="#">About</a></li>
+      <li><a href="#" class="cta">Get Started</a></li>
+    </ul>
+  </nav>
+
+  <!-- Hero Section -->
+  <header class="hero">
+
+    <div class="hero__text">
+      <h1>Build Faster with the Cloud You Can Trust.</h1>
+
+      <p>
+        Deploy, scale and monitor your apps in minutes —
+        no servers to manage.
+      </p>
+
+      <div class="hero__btns">
+        <a href="#" class="btn btn--primary">Start Free</a>
+        <a href="#" class="btn btn--ghost">Watch Demo</a>
+      </div>
+    </div>
+
+    <div class="hero__img">
+      <img
+        src="https://picsum.photos/id/180/700/500"
+        alt="Laptop on a desk">
+    </div>
+
+  </header>
+
+</body>
+</html>
+```
