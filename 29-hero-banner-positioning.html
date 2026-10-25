@@ -1,0 +1,167 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TravelNest - Hero Section</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+    }
+
+    /* Student Information */
+    .student-info {
+      background: #1d3557;
+      color: white;
+      padding: 15px;
+      text-align: center;
+    }
+
+    .student-info p {
+      margin: 5px;
+    }
+
+    /* Hero Section */
+    .hero {
+      position: relative;
+      height: 100vh;
+      min-height: 500px;
+      overflow: hidden;
+      color: white;
+    }
+
+    /* Background Image */
+    .hero__bg {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: 0;
+    }
+
+    /* Dark Overlay */
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 0.7),
+        rgba(0, 0, 0, 0.3)
+      );
+      z-index: 1;
+    }
+
+    /* Navigation Bar */
+    .nav {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 3;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 30px;
+      gap: 15px;
+    }
+
+    .nav a {
+      color: white;
+      text-decoration: none;
+      margin-left: 15px;
+    }
+
+    .logo {
+      font-weight: bold;
+      font-size: 24px;
+    }
+
+    /* Center Content */
+    .hero__content {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+      z-index: 2;
+      width: 90%;
+      max-width: 700px;
+    }
+
+    .hero__content h1 {
+      font-size: clamp(32px, 6vw, 64px);
+      margin-bottom: 16px;
+    }
+
+    .hero__content p {
+      font-size: 18px;
+      margin-bottom: 25px;
+      line-height: 1.6;
+    }
+
+    /* Button */
+    .btn {
+      display: inline-block;
+      background: #ff6b35;
+      color: white;
+      padding: 14px 28px;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .btn:hover {
+      background: #e85d2a;
+    }
+
+    /* Floating Badge */
+    .badge {
+      position: absolute;
+      right: 30px;
+      bottom: 30px;
+      z-index: 3;
+      background: white;
+      color: #222;
+      padding: 12px 20px;
+      border-radius: 10px;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.3);
+    }
+
+    .badge strong {
+      display: block;
+      font-size: 25px;
+    }
+
+    /* Fixed Button */
+    .fab {
+      position: fixed;
+      right: 20px;
+      top: 50%;
+      z-index: 10;
+      background: white;
+      color: #222;
+      padding: 10px 14px;
+      border-radius: 50%;
+      text-decoration: none;
+      box-shadow: 0 3px 10px #555;
+    }
+
+    /* Next Section */
+    section.next {
+      padding: 60px 20px;
+      text-align: center;
+      background: #f0f4f8;
+    }
+
+    section.next h2 {
+      margin-bottom:
