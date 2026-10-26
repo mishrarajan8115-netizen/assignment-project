@@ -1,0 +1,232 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Simple responsive dashboard using CSS Grid named areas.">
+  <title>Simple Dashboard</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: #f1f5f9;
+      color: #1e293b;
+    }
+
+    .dashboard {
+      min-height: 100vh;
+      display: grid;
+      grid-template-columns: 220px 1fr 1fr;
+      grid-template-rows: 70px 140px 1fr 50px;
+      grid-template-areas:
+        "header header header"
+        "sidebar card1 card2"
+        "sidebar chart activity"
+        "footer footer footer";
+      gap: 16px;
+      padding: 16px;
+    }
+
+    .dashboard > * {
+      padding: 20px;
+      background: white;
+      border-radius: 10px;
+    }
+
+    .header {
+      grid-area: header;
+      background: #1e293b;
+      color: white;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .sidebar {
+      grid-area: sidebar;
+      background: #334155;
+      color: white;
+    }
+
+    .sidebar h2 {
+      margin-bottom: 20px;
+    }
+
+    .sidebar ul {
+      list-style: none;
+    }
+
+    .sidebar li {
+      padding: 12px 0;
+      border-bottom: 1px solid #475569;
+    }
+
+    .card1 {
+      grid-area: card1;
+    }
+
+    .card2 {
+      grid-area: card2;
+    }
+
+    .card1,
+    .card2 {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .card1 p,
+    .card2 p {
+      color: #64748b;
+      margin-bottom: 8px;
+    }
+
+    .card1 strong,
+    .card2 strong {
+      font-size: 28px;
+      color: #2563eb;
+    }
+
+    .chart {
+      grid-area: chart;
+    }
+
+    .chart h2,
+    .activity h2 {
+      margin-bottom: 18px;
+    }
+
+    .bars {
+      height: 180px;
+      display: flex;
+      align-items: flex-end;
+      gap: 12px;
+      border-bottom: 2px solid #cbd5e1;
+    }
+
+    .bars span {
+      flex: 1;
+      background: #3b82f6;
+      border-radius: 5px 5px 0 0;
+    }
+
+    .activity {
+      grid-area: activity;
+    }
+
+    .activity ul {
+      padding-left: 20px;
+    }
+
+    .activity li {
+      margin-bottom: 14px;
+    }
+
+    .footer {
+      grid-area: footer;
+      text-align: center;
+      font-size: 14px;
+    }
+
+    @media (max-width: 700px) {
+      .dashboard {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto;
+        grid-template-areas:
+          "header header"
+          "sidebar sidebar"
+          "card1 card2"
+          "chart chart"
+          "activity activity"
+          "footer footer";
+      }
+    }
+
+    @media (max-width: 450px) {
+      .dashboard {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+          "header"
+          "sidebar"
+          "card1"
+          "card2"
+          "chart"
+          "activity"
+          "footer";
+      }
+
+      .header {
+        gap: 10px;
+        flex-wrap: wrap;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <main class="dashboard">
+
+    <header class="header">
+      <h1>My Dashboard</h1>
+      <span>Welcome Back!</span>
+    </header>
+
+    <aside class="sidebar">
+      <h2>Menu</h2>
+      <ul>
+        <li>🏠 Home</li>
+        <li>👥 Users</li>
+        <li>📊 Reports</li>
+        <li>⚙️ Settings</li>
+      </ul>
+    </aside>
+
+    <section class="card1">
+      <p>Total Users</p>
+      <strong>1,250</strong>
+    </section>
+
+    <section class="card2">
+      <p>Total Sales</p>
+      <strong>₹25,000</strong>
+    </section>
+
+    <section class="chart">
+      <h2>Weekly Statistics</h2>
+      <div class="bars" aria-label="Weekly statistics bar chart">
+        <span style="height: 40%"></span>
+        <span style="height: 65%"></span>
+        <span style="height: 50%"></span>
+        <span style="height: 85%"></span>
+        <span style="height: 70%"></span>
+        <span style="height: 95%"></span>
+      </div>
+    </section>
+
+    <section class="activity">
+      <h2>Recent Activity</h2>
+      <ul>
+        <li>New user registered</li>
+        <li>New sale completed</li>
+        <li>Report generated</li>
+      </ul>
+    </section>
+
+    <footer class="footer">
+      &copy; 2026 My Dashboard
+    </footer>
+
+  </main>
+
+</body>
+</html>

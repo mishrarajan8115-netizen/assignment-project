@@ -1,0 +1,489 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Bloom Café - Fresh coffee, homemade bakes and warm moments.">
+  <title>Bloom Café | Fresh Coffee & Bakes</title>
+
+  <style>
+    :root {
+      --cream: #fbf5ec;
+      --brown: #4a2c1a;
+      --green: #5b8c5a;
+      --gold: #d99a2b;
+      --white: #ffffff;
+      --radius: 16px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 90px;
+    }
+
+    body {
+      font-family: Georgia, "Times New Roman", serif;
+      background: var(--cream);
+      color: var(--brown);
+      line-height: 1.7;
+    }
+
+    img {
+      display: block;
+      width: 100%;
+      max-width: 100%;
+      object-fit: cover;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .wrap {
+      width: min(1150px, 92%);
+      margin-inline: auto;
+    }
+
+    h2 {
+      font-size: clamp(1.8rem, 4vw, 2.5rem);
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    .btn {
+      display: inline-block;
+      background: var(--gold);
+      color: var(--brown);
+      padding: 12px 25px;
+      border-radius: 50px;
+      font-weight: bold;
+      transition: 0.3s ease;
+    }
+
+    .btn:hover {
+      background: var(--brown);
+      color: var(--white);
+      transform: translateY(-3px);
+    }
+
+    a:focus-visible {
+      outline: 3px solid var(--green);
+      outline-offset: 4px;
+    }
+
+    /* Header */
+    .site-header {
+      background: var(--cream);
+      padding: 18px 0;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      box-shadow: 0 2px 12px #4a2c1a10;
+    }
+
+    .site-header .wrap {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .logo {
+      color: var(--green);
+      font-size: 1.6rem;
+      font-weight: bold;
+      white-space: nowrap;
+    }
+
+    .site-nav ul {
+      display: flex;
+      gap: 28px;
+      list-style: none;
+    }
+
+    .site-nav a {
+      font-weight: bold;
+      transition: color 0.3s;
+    }
+
+    .site-nav a:hover {
+      color: var(--green);
+    }
+
+    /* Hero */
+    .hero .wrap {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      gap: 45px;
+      padding-block: 65px;
+    }
+
+    .hero h1 {
+      font-size: clamp(2.4rem, 5vw, 3.8rem);
+      line-height: 1.15;
+      margin-bottom: 20px;
+    }
+
+    .hero p {
+      font-size: 1.1rem;
+      margin-bottom: 25px;
+      max-width: 500px;
+    }
+
+    .hero img {
+      height: 430px;
+      border-radius: var(--radius);
+      box-shadow: 12px 12px 0 #d99a2b30;
+    }
+
+    /* Menu */
+    .menu {
+      padding-block: 65px;
+      background: var(--white);
+    }
+
+    .menu__grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 28px;
+    }
+
+    .dish {
+      background: var(--cream);
+      border-radius: var(--radius);
+      overflow: hidden;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .dish:hover {
+      transform: translateY(-7px);
+      box-shadow: 0 12px 25px #4a2c1a18;
+    }
+
+    .dish img {
+      height: 220px;
+      transition: transform 0.4s;
+    }
+
+    .dish:hover img {
+      transform: scale(1.04);
+    }
+
+    .dish__body {
+      padding: 22px;
+    }
+
+    .dish__row {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 10px;
+      margin-bottom: 8px;
+    }
+
+    .dish h3 {
+      font-size: 1.15rem;
+    }
+
+    .dish__price {
+      color: var(--green);
+      font-weight: bold;
+      white-space: nowrap;
+    }
+
+    /* About */
+    .about {
+      padding-block: 75px;
+    }
+
+    .about .wrap {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      gap: 45px;
+    }
+
+    .about img {
+      height: 350px;
+      border-radius: var(--radius);
+    }
+
+    .about h2 {
+      text-align: left;
+      margin-bottom: 15px;
+    }
+
+    .about p {
+      font-size: 1.08rem;
+    }
+
+    /* Contact */
+    .contact {
+      background: var(--green);
+      color: var(--white);
+      padding-block: 55px;
+      text-align: center;
+    }
+
+    .contact h2 {
+      margin-bottom: 10px;
+    }
+
+    .contact p {
+      margin-bottom: 15px;
+    }
+
+    .contact .btn {
+      margin-top: 10px;
+    }
+
+    /* Footer */
+    .site-footer {
+      padding-block: 22px;
+    }
+
+    .site-footer .wrap {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 15px;
+      font-size: 0.9rem;
+    }
+
+    /* Tablet */
+    @media (max-width: 850px) {
+      .hero .wrap,
+      .about .wrap {
+        gap: 28px;
+      }
+
+      .hero img {
+        height: 350px;
+      }
+
+      .menu__grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .dish:last-child {
+        grid-column: 1 / -1;
+        width: calc(50% - 14px);
+        justify-self: center;
+      }
+    }
+
+    /* Mobile */
+    @media (max-width: 600px) {
+      .site-header .wrap {
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      .site-nav ul {
+        gap: 22px;
+      }
+
+      .hero .wrap,
+      .about .wrap {
+        grid-template-columns: 1fr;
+      }
+
+      .hero .wrap {
+        padding-block: 40px;
+        gap: 30px;
+      }
+
+      .hero h1 {
+        font-size: 2.5rem;
+      }
+
+      .hero img {
+        height: 280px;
+      }
+
+      .menu,
+      .about {
+        padding-block: 45px;
+      }
+
+      .menu__grid {
+        grid-template-columns: 1fr;
+        gap: 22px;
+      }
+
+      .dish:last-child {
+        grid-column: auto;
+        width: 100%;
+      }
+
+      .dish img {
+        height: 230px;
+      }
+
+      .about img {
+        height: 260px;
+      }
+
+      .about h2 {
+        text-align: center;
+      }
+
+      .contact {
+        padding-block: 40px;
+      }
+
+      .site-footer .wrap {
+        flex-direction: column;
+        text-align: center;
+        gap: 5px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      *,
+      *::before,
+      *::after {
+        transition-duration: 0.01ms !important;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header class="site-header">
+    <div class="wrap">
+      <a class="logo" href="#" aria-label="Bloom Café home">
+        🌿 Bloom Café
+      </a>
+
+      <nav class="site-nav" aria-label="Main navigation">
+        <ul>
+          <li><a href="#menu">Menu</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="wrap">
+        <div>
+          <h1>Fresh coffee. Warm moments.</h1>
+          <p>
+            Small-batch roasts and homemade bakes, served in the heart of
+            Meerut. Come for the coffee, stay for the comfort.
+          </p>
+          <a class="btn" href="#menu">Explore Our Menu</a>
+        </div>
+
+        <img
+          src="https://picsum.photos/id/225/800/600"
+          alt="Coffee shop atmosphere"
+        >
+      </div>
+    </section>
+
+    <section class="menu" id="menu">
+      <div class="wrap">
+        <h2>Our Favourites</h2>
+
+        <div class="menu__grid">
+          <article class="dish">
+            <img
+              src="https://picsum.photos/id/1060/500/400"
+              alt="Coffee drink"
+              loading="lazy"
+            >
+            <div class="dish__body">
+              <div class="dish__row">
+                <h3>Signature Latte</h3>
+                <span class="dish__price">₹180</span>
+              </div>
+              <p>Double espresso with silky steamed milk.</p>
+            </div>
+          </article>
+
+          <article class="dish">
+            <img
+              src="https://picsum.photos/id/292/500/400"
+              alt="Freshly baked pastry"
+              loading="lazy"
+            >
+            <div class="dish__body">
+              <div class="dish__row">
+                <h3>Butter Croissant</h3>
+                <span class="dish__price">₹120</span>
+              </div>
+              <p>Baked every morning, flaky and golden.</p>
+            </div>
+          </article>
+
+          <article class="dish">
+            <img
+              src="https://picsum.photos/id/312/500/400"
+              alt="Chocolate dessert"
+              loading="lazy"
+            >
+            <div class="dish__body">
+              <div class="dish__row">
+                <h3>Choco Cake</h3>
+                <span class="dish__price">₹210</span>
+              </div>
+              <p>Rich dark chocolate with a molten centre.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="about" id="about">
+      <div class="wrap">
+        <img
+          src="https://picsum.photos/id/431/700/500"
+          alt="Cosy café interior"
+          loading="lazy"
+        >
+
+        <div>
+          <h2>Our Story</h2>
+          <p>
+            Bloom Café began as a tiny corner stall in 2019. Today, it is a
+            cosy space where students, artists and families meet over honest
+            food and great coffee. Every cup is prepared with care.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact" id="contact">
+      <div class="wrap">
+        <h2>Visit Us</h2>
+        <p>12 Garden Road, Meerut · Open daily 8 AM – 10 PM</p>
+        <a class="btn" href="tel:+919000000000">Call to Reserve</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <span>&copy; 2026 Bloom Café</span>
+      <span>Instagram · Facebook</span>
+    </div>
+  </footer>
+</body>
+</html>

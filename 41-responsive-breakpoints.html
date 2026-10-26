@@ -1,0 +1,262 @@
+
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta
+    name="description"
+    content="Responsive website demonstrating three CSS breakpoints."
+  >
+  <title>Responsive Breakpoints Project</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+    }
+
+    body {
+      font-family: system-ui, sans-serif;
+      line-height: 1.6;
+      background: #f8f9fc;
+      color: #222;
+    }
+
+    header {
+      background: #1f3a93;
+      color: #fff;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+      padding: 1rem 2rem;
+    }
+
+    header strong {
+      font-size: 1.2rem;
+    }
+
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.25rem;
+    }
+
+    nav a {
+      color: #fff;
+      text-decoration: none;
+    }
+
+    nav a:hover,
+    nav a:focus-visible {
+      text-decoration: underline;
+      text-underline-offset: 4px;
+    }
+
+    main {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 2rem;
+    }
+
+    h1 {
+      font-size: 2.6rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 1.25rem;
+    }
+
+    .card {
+      background: #fff;
+      padding: 1.25rem;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+      overflow-wrap: anywhere;
+      transition: transform 0.2s;
+    }
+
+    .card:hover {
+      transform: translateY(-3px);
+    }
+
+    .card h2 {
+      margin-bottom: 0.5rem;
+    }
+
+    .badge {
+      display: inline-block;
+      margin-top: 1rem;
+      background: #ffe8cc;
+      padding: 0.25rem 0.75rem;
+      border-radius: 999px;
+      font-size: 0.85rem;
+    }
+
+    .test-section {
+      margin-top: 2rem;
+    }
+
+    .test-section h2 {
+      margin-bottom: 1rem;
+      font-size: 1.3rem;
+    }
+
+    .table-wrapper {
+      overflow-x: auto;
+      background: #fff;
+      border-radius: 6px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: left;
+    }
+
+    th,
+    td {
+      border: 1px solid #d1d5db;
+      padding: 0.75rem;
+    }
+
+    th {
+      background: #e8edff;
+    }
+
+    /* Breakpoint 1: tablets and small laptops */
+    @media (max-width: 1024px) {
+      .cards {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      h1 {
+        font-size: 2.2rem;
+      }
+    }
+
+    /* Breakpoint 2: large phones */
+    @media (max-width: 768px) {
+      header {
+        flex-direction: column;
+        gap: 0.75rem;
+        padding: 1rem;
+      }
+
+      main {
+        padding: 1.25rem;
+      }
+
+      h1 {
+        font-size: 1.9rem;
+      }
+    }
+
+    /* Breakpoint 3: small phones */
+    @media (max-width: 480px) {
+      .cards {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      nav {
+        justify-content: center;
+        gap: 0.75rem 1rem;
+      }
+
+      main {
+        padding: 1rem;
+      }
+
+      h1 {
+        font-size: 1.7rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <strong>Rajan Mishra</strong>
+
+    <nav aria-label="Main navigation">
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main id="home">
+    <h1>Responsive Project</h1>
+
+    <section class="cards" aria-label="Website sections">
+
+      <article class="card" id="home-card">
+        <h2>Home</h2>
+        <p>Landing content.</p>
+      </article>
+
+      <article class="card" id="about">
+        <h2>About</h2>
+        <p>Student, developer.</p>
+      </article>
+
+      <article class="card" id="projects">
+        <h2>Projects</h2>
+        <p>45 assignments.</p>
+      </article>
+
+      <article class="card" id="contact">
+        <h2>Contact</h2>
+        <p>Say hello.</p>
+      </article>
+
+    </section>
+
+    <span class="badge">Layout: 4 columns → 2 columns → 1 column</span>
+
+    <section class="test-section">
+      <h2>Responsive Layout Test</h2>
+      <p>Chrome DevTools mein Ctrl + Shift + M press karke screen sizes test karein.</p>
+
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr>
+              <th>Device / Width</th>
+              <th>Expected Layout</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <tr>
+              <td>Desktop 1440px</td>
+              <td>4 columns</td>
+            </tr>
+            <tr>
+              <td>iPad Air 820px</td>
+              <td>2 columns</td>
+            </tr>
+            <tr>
+              <td>iPhone 14 390px</td>
+              <td>1 column, stacked header</td>
+            </tr>
+            <tr>
+              <td>Galaxy Fold 280px</td>
+              <td>1 column, reduced horizontal overflow</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+  </main>
+
+</body>
+</html>
